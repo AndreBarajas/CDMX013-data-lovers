@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+
+body { 
+    background-image: url(./Imagenes/fondo.png);
+}
+
+.title { 
+    color: #FFFF;
+    position: absolute;
+    left: 650.16px;
+    top: 50.14px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 50px;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    width: 80%; 
+    left: 150px;
+    top: 290px;
+    position: absolute;
+    background-image: url(./Imagenes/welcome.png);
+    border-radius: 50px;
+}
+
+#containerPokemon {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-content: space-around;
+    position: absolute;
+    left: 150px;
+    top: 700px;
+    width: 80%;
+    background-color: antiquewhite;
+}
+
+div.pokeDiv  {
+    border-color: white;
+    background-color: grey;
+    text-align: center;
+    line-height: 250px;
+    margin: 10px;
+    border-radius: 10px;  
+    width: 280px;
+    height: 320px;
+}
+
+.pokeTitle{
+    font-size:45px ;
+}
+
+.userTitle {
+    font-size: 35px;
+    font-family: 'Mouse Memoirs';
+}
+
