@@ -4,15 +4,17 @@
 
 body { 
     background-image: url(./Imagenes/fondo.png);
+    background-attachment: fixed;
+    overflow: scroll;
 }
 
-.title { 
-    color: #FFFF;
-    position: absolute;
-    left: 500.16px;
+header { 
+    margin: auto;
+    padding: 50px;
+    width: 515px;
+    height: 96px;
+    left: 580.16px;
     top: 10.14px;
-    font-family:'Bungee', cursive;
-    font-size: 50px;
 }
 
 .welcome {
@@ -26,11 +28,12 @@ body {
     position: absolute;
     background-image: url(./Imagenes/welcome.png);
     border-radius: 50px;
+    height: 193px;
 }
 
 .imagePikachu {
    position: absolute;
-   left: 980px;
+   left: 800px;
    top: 205px; 
 }
 
@@ -56,21 +59,32 @@ body {
 
 
 div.pokeDiv  {
-    background-color: rgba(249, 241, 241, 0.2);
-    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(2px);
     margin: 10px;   
     border-radius: 10px;  
-    width: 280px;
-    height: 320px;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .pokeImg {
-    
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+    margin-top: 15px;
 }
 
 .pokeName {
     color: white;
 }
 
+h3{
+    font-family: 'Bungee', cursive;
+    color: rgb(30, 2, 10);
+}
+
+h4{
+    font-family: 'Bungee', cursive;
+}
