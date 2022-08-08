@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 
 body { 
@@ -8,21 +9,39 @@ body {
 .title { 
     color: #FFFF;
     position: absolute;
-    left: 650.16px;
-    top: 50.14px;
-    font-family: 'Mouse Memoirs', sans-serif;
+    left: 500.16px;
+    top: 10.14px;
+    font-family:'Bungee', cursive;
     font-size: 50px;
 }
 
 .welcome {
     display: flex;
-    align-items: center;
-    width: 80%; 
+    flex-direction: column;
+    align-items: start;
+    width: 74%; 
     left: 150px;
     top: 290px;
+    padding: 40px;
     position: absolute;
     background-image: url(./Imagenes/welcome.png);
     border-radius: 50px;
+}
+
+.imagePikachu {
+   position: absolute;
+   left: 980px;
+   top: 205px; 
+}
+
+.pokeTitle {
+    font-size: 50px;
+    font-family:'Bungee', cursive;
+}
+
+.userTitle {
+    font-size: 35px;
+    font-family: 'Mouse Memoirs';
 }
 
 #containerPokemon {
@@ -31,28 +50,27 @@ body {
     justify-content: space-around;
     position: absolute;
     left: 150px;
-    top: 700px;
+    top: 600px;
     width: 80%;
-    background-color: antiquewhite;
 }
 
+
 div.pokeDiv  {
-    border-color: white;
-    background-color: grey;
-    text-align: center;
-    line-height: 250px;
-    margin: 10px;
+    background-color: rgba(249, 241, 241, 0.2);
+    backdrop-filter: blur(4px);
+    margin: 10px;   
     border-radius: 10px;  
     width: 280px;
     height: 320px;
 }
 
-.pokeTitle{
-    font-size:45px ;
+.pokeImg {
+    
+    width: 150px;
+    height: 150px;
 }
 
-.userTitle {
-    font-size: 35px;
-    font-family: 'Mouse Memoirs';
+.pokeName {
+    color: white;
 }
 
