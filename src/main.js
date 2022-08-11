@@ -2,12 +2,12 @@ import allData from "./data/pokemon/pokemon.js"
 
 const mainData = allData.pokemon;
 
-const pokemonCard = (mainData) => {
+export const pokemonCard = (mainData) => {
     let pokemonContainer = document.getElementById("containerPokemon");
     let displayPokemon = document.createElement("div");
     displayPokemon.className = 'pokeDiv';
     pokemonContainer.appendChild(displayPokemon);
-    console.log(displayPokemon);
+      
     
     let displayImg = document.createElement("img");
     displayImg.className = 'pokeImg';
@@ -32,3 +32,8 @@ mainData.map(currentPokemon => {
     pokemonCard(currentPokemon);
 
 });
+
+let typesPoke = document.getElementById("typesPoke");
+typesPoke.addEventListener("change", function(e) {
+    console.log("Haz elegido ", e.target.value)
+})
