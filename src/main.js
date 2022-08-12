@@ -1,8 +1,8 @@
 import allData from "./data/pokemon/pokemon.js"
-import {filterType, filterGen} from "./data.js"
+import {filterType, filterGen, filterWeakness} from "./data.js"
 
 const mainData = allData.pokemon;
-let pokedata = allData.pokemon;
+let pokeData = allData.pokemon;
 
 export const pokemonCard = (mainData) => {
     let pokemonContainer = document.getElementById("containerPokemon");
@@ -39,9 +39,9 @@ let selectGen = document.getElementById("generation");
 // e = evento, target= se refiere al input, .value nos da el valor del input
 selectGen.addEventListener("change", (e) => {
   let selectedGeneration = e.target.value;
-  pokedata = filterGen(mainData,selectedGeneration);
+  pokeData = filterGen(mainData,selectedGeneration);
     document.getElementById("containerPokemon").innerHTML = "";
-    pokedata.forEach(currentPokemon => {
+    pokeData.forEach(currentPokemon => {
       pokemonCard(currentPokemon);
     });
 }); 
@@ -49,10 +49,29 @@ selectGen.addEventListener("change", (e) => {
 let selectType = document.getElementById("type");
 selectType.addEventListener("change", (e) => {
   let selectedType = e.target.value;
-  pokedata = filterType(mainData,selectedType);
+  pokeData = filterType(mainData,selectedType);
     document.getElementById("containerPokemon").innerHTML = "";
-    pokedata.forEach(currentPokemon => {
+    pokeData.forEach(currentPokemon => {
       pokemonCard(currentPokemon);
     });
 });
 
+let selectWeakness = document.getElementById("weaknessPokemon");
+     selectWeakness.addEventListener("change", (e) => {
+         let selectedWeakness = e.target.value;
+         pokeData = filterWeakness(mainData, selectedWeakness);
+         document.getElementById("containerPokemon").innerHTML = "";
+         pokeData.forEach(currentPokemon => {
+             pokemonCard(currentPokemon)
+         });
+     });
+     
+/*let selectRarity = document.getElementById("pokemonRarity");
+selectRarity.addEventListener("change", (e) => {
+    let selectedRarity = e.target.value;
+    pokeData = filterRarity(mainData, selectedRarity);
+    document.getElementById("containerPokemon").innerHTML = "";
+    pokeData.forEach(currentPokemon => {
+             pokemonCard(currentPokemon)
+         });
+     });*/
