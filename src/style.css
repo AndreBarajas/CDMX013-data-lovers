@@ -24,7 +24,7 @@ header {
     align-items: start;
     width: 71%; 
     left: 150px;
-    top: 290px;
+    top: 230px;
     padding: 40px;
     position: absolute;
     background-image: url(./Imagenes/welcome.png);
@@ -35,7 +35,7 @@ header {
 .imagePikachu {
    position: absolute;
    left: 800px;
-   top: 205px; 
+   top: 145px; 
 }
 
 .pokeTitle {
@@ -87,3 +87,33 @@ h4{
     font-size: 20px;
 }
 
+.genlogo {
+    size: 200px;
+}
+.generation {
+    border-radius: 10px;
+    width: 17%;
+    height: 40px;
+    align-items: center;
+    margin-left: 160px;
+    margin-top: 26%;
+    background-color: rgb(203, 232, 233);
+    backdrop-filter: blur(2px);
+    font-family: 'Staatliches', cursive;
+    font-size: medium;
+    align-items: center;
+}
+
+.type {
+    border-radius: 10px;
+    width: 17%;
+    height: 40px;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 26%;
+    background-color: rgb(203, 232, 233);
+    backdrop-filter: blur(2px);
+    font-family: 'Staatliches', cursive;
+    font-size: medium;
+    align-items: center;
+} 
