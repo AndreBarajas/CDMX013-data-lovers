@@ -7,8 +7,7 @@ export const pokemonCard = (mainData) => {
     let displayPokemon = document.createElement("div");
     displayPokemon.className = 'pokeDiv';
     pokemonContainer.appendChild(displayPokemon);
-      
-    
+         
     let displayImg = document.createElement("img");
     displayImg.className = 'pokeImg';
     displayImg.src = mainData.img;
@@ -33,7 +32,3 @@ mainData.map(currentPokemon => {
 
 });
 
-let typesPoke = document.getElementById("typesPoke");
-typesPoke.addEventListener("change", function(e) {
-    console.log("Haz elegido ", e.target.value)
-})

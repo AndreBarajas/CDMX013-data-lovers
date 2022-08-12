@@ -87,20 +87,3 @@ h4{
     font-size: 20px;
 }
 
-.multiSelector{
-    width: max-content;
-}
-.typeFilter{
-    font-family: 'Mouse Memoirs'; 
-    outline: none;
-    border:none;
-}
-
-.selectField, .types{
-border: 1px solid white;
-}
-
-.downArrow{
-    font-size: 1.2rem;
-    cursor: pointer;
-}
