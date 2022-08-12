@@ -5,7 +5,18 @@ export const filterGen = ( mainData,selectedGeneration) => {
 }; 
 
 export const filterType = (mainData, selectedType) => {
-  const resultType = mainData.filter(mainData => mainData.type.includes(selectedType))
-  console.log(resultType);
-   return resultType
+  const typePokemon = mainData.filter(mainData => mainData.type.includes(selectedType))
+  console.log(typePokemon);
+   return typePokemon
 };
+export const filterWeakness = (mainData, selectedWeakness) => {
+  const weaknessPokemon = mainData.filter(mainData => mainData.weaknesses.includes(selectedWeakness));
+  console.log(weaknessPokemon);
+  return weaknessPokemon
+};
+
+/*export const filterRarity = (mainData, selectedRarity) => {
+  const rarityPokemon = mainData.filter(mainData => mainData.pokemon-rariity.includes(selectedRarity));
+  console.log(rarityPokemon);
+  return rarityPokemon
+};*/

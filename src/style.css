@@ -90,7 +90,7 @@ h4{
 .genlogo {
     size: 200px;
 }
-.generation {
+#generation {
     border-radius: 10px;
     width: 17%;
     height: 40px;
@@ -104,7 +104,7 @@ h4{
     align-items: center;
 }
 
-.type {
+#type {
     border-radius: 10px;
     width: 17%;
     height: 40px;
@@ -117,3 +117,35 @@ h4{
     font-size: medium;
     align-items: center;
 } 
+
+#weaknessPokemon {
+    border-radius: 10px;
+    width: 17%;
+    height: 40px;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 26%;
+    background-color: rgb(203, 232, 233);
+    backdrop-filter: blur(2px);
+    font-family: 'Staatliches', cursive;
+    font-size: medium;
+    align-items: center;
+} 
+
+#pokemonRarity {
+    border-radius: 10px;
+    width: 17%;
+    height: 40px;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 26%;
+    background-color: rgb(203, 232, 233);
+    backdrop-filter: blur(2px);
+    font-family: 'Staatliches', cursive;
+    font-size: medium;
+    align-items: center;
+} 
+
+.option {
+    font-family:  'Staatliches', cursive;
+}
