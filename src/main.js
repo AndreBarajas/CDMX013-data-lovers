@@ -1,5 +1,5 @@
 import allData from "./data/pokemon/pokemon.js"
-import {filterType, filterPokemon} from "./data.js"
+import {filterType, filterGen} from "./data.js"
 
 const mainData = allData.pokemon;
 let pokedata = allData.pokemon;
@@ -39,7 +39,7 @@ let selectGen = document.getElementById("generation");
 // e = evento, target= se refiere al input, .value nos da el valor del input
 selectGen.addEventListener("change", (e) => {
   let selectedGeneration = e.target.value;
-  pokedata = filterPokemon(mainData,selectedGeneration);
+  pokedata = filterGen(mainData,selectedGeneration);
     document.getElementById("containerPokemon").innerHTML = "";
     pokedata.forEach(currentPokemon => {
       pokemonCard(currentPokemon);
@@ -55,3 +55,4 @@ selectType.addEventListener("change", (e) => {
       pokemonCard(currentPokemon);
     });
 });
+
