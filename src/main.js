@@ -1,6 +1,8 @@
 import allData from "./data/pokemon/pokemon.js"
+import {filterType, filterPokemon} from "./data.js"
 
 const mainData = allData.pokemon;
+let pokedata = allData.pokemon;
 
 export const pokemonCard = (mainData) => {
     let pokemonContainer = document.getElementById("containerPokemon");
@@ -32,3 +34,24 @@ mainData.map(currentPokemon => {
 
 });
 
+let selectGen = document.getElementById("generation");
+//change hace que cada vez que cambia algo en el input, se activa
+// e = evento, target= se refiere al input, .value nos da el valor del input
+selectGen.addEventListener("change", (e) => {
+  let selectedGeneration = e.target.value;
+  pokedata = filterPokemon(mainData,selectedGeneration);
+    document.getElementById("containerPokemon").innerHTML = "";
+    pokedata.forEach(currentPokemon => {
+      pokemonCard(currentPokemon);
+    });
+}); 
+
+let selectType = document.getElementById("type");
+selectType.addEventListener("change", (e) => {
+  let selectedType = e.target.value;
+  pokedata = filterType(mainData,selectedType);
+    document.getElementById("containerPokemon").innerHTML = "";
+    pokedata.forEach(currentPokemon => {
+      pokemonCard(currentPokemon);
+    });
+});
