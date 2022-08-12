@@ -2,13 +2,12 @@ import allData from "./data/pokemon/pokemon.js"
 
 const mainData = allData.pokemon;
 
-const pokemonCard = (mainData) => {
+export const pokemonCard = (mainData) => {
     let pokemonContainer = document.getElementById("containerPokemon");
     let displayPokemon = document.createElement("div");
     displayPokemon.className = 'pokeDiv';
     pokemonContainer.appendChild(displayPokemon);
-    console.log(displayPokemon);
-    
+         
     let displayImg = document.createElement("img");
     displayImg.className = 'pokeImg';
     displayImg.src = mainData.img;
@@ -32,3 +31,4 @@ mainData.map(currentPokemon => {
     pokemonCard(currentPokemon);
 
 });
+
