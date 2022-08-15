@@ -1,22 +1,43 @@
 export const filterGen = ( mainData,selectedGeneration) => {
-  const genPokemon = mainData.filter(mainData => mainData.generation.name == selectedGeneration)
-  console.log(genPokemon);
- return genPokemon
+  const genPokemon = mainData.filter(mainData => {
+    if (mainData.generation.name == (selectedGeneration)) {
+      return true;
+    }})
+    console.log(genPokemon);
+  if (genPokemon.length === 0){
+    return mainData;}
+    else {return genPokemon;}  
 }; 
-
 export const filterType = (mainData, selectedType) => {
-  const typePokemon = mainData.filter(mainData => mainData.type.includes(selectedType))
-  console.log(typePokemon);
-   return typePokemon
-};
-export const filterWeakness = (mainData, selectedWeakness) => {
-  const weaknessPokemon = mainData.filter(mainData => mainData.weaknesses.includes(selectedWeakness));
-  console.log(weaknessPokemon);
-  return weaknessPokemon
-};
+  const typePokemon = mainData.filter(mainData => {
+    if (mainData.type.includes(selectedType)) {
+      return true;
+    }})
+    console.log(typePokemon);
+    if (typePokemon.length === 0){
+      return mainData;}
+      else {return typePokemon;}
+    };
 
-/*export const filterRarity = (mainData, selectedRarity) => {
-  const rarityPokemon = mainData.filter(mainData => mainData.pokemon-rariity.includes(selectedRarity));
-  console.log(rarityPokemon);
-  return rarityPokemon
-};*/
+export const filterWeakness = (mainData, selectedWeakness) => {
+  const weaknessPokemon = mainData.filter(mainData => {
+    if (mainData.weaknesses.includes(selectedWeakness)) {
+      return true;
+    }})
+    console.log(weaknessPokemon);
+    if (weaknessPokemon.length === 0){
+      return mainData;}
+      else {return weaknessPokemon;}
+    };
+
+export const filterRarity = (mainData, selectedRarity) => {
+  const resultRarity = mainData.filter(mainData => {
+    if (mainData["pokemon-rarity"] == (selectedRarity)) {
+      return true;
+    }}) 
+      console.log(resultRarity);
+    if (resultRarity.length === 0){
+      return mainData;}
+      else {return resultRarity;}
+    };
+   
