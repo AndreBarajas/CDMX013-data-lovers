@@ -1,5 +1,5 @@
 import allData from "./data/pokemon/pokemon.js"
-import {filterType, filterGen, filterWeakness} from "./data.js"
+import {filterType, filterGen, filterWeakness, filterRarity} from "./data.js"
 
 const mainData = allData.pokemon;
 let pokeData = allData.pokemon;
@@ -66,7 +66,7 @@ let selectWeakness = document.getElementById("weaknessPokemon");
          });
      });
      
-/*let selectRarity = document.getElementById("pokemonRarity");
+     let selectRarity = document.getElementById("pokemonRarity");
 selectRarity.addEventListener("change", (e) => {
     let selectedRarity = e.target.value;
     pokeData = filterRarity(mainData, selectedRarity);
@@ -74,4 +74,4 @@ selectRarity.addEventListener("change", (e) => {
     pokeData.forEach(currentPokemon => {
              pokemonCard(currentPokemon)
          });
-     });*/
+     });
