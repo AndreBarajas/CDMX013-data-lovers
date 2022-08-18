@@ -1,4 +1,3 @@
-
 import allData from "./data/pokemon/pokemon.js"
 import { filterType, filterGen, filterWeakness, filterRarity, filterOrder } from "./data.js"
 
@@ -80,7 +79,7 @@ selectRarity.addEventListener("change", (e) => {
 let selectOrder = document.getElementById("sortMenu");
 selectOrder.addEventListener("change", (e) => {
   let sortOrder = e.target.value;
-  pokeData = filterOrder (pokeData, sortOrder);
+  pokeData = filterOrder(pokeData, sortOrder);
   document.getElementById("containerPokemon").innerHTML = "";
   pokeData.forEach(currentPokemon => {
     pokemonCard(currentPokemon)
