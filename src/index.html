@@ -18,14 +18,14 @@
 
     <img src="./Imagenes/tumblr-1984004c0511e313ac902e8-unscreen.gif" class="imagePikachu">
 
-    <section class="categoryMenu">
-    <select id="generation" class="generationMenu"> 
+    <section class="menu">
+    <select id="generation" class="menu"> 
       <option class="option" value="all">Generation <img src="./Imagenes/genlogo.png" class="genlogo"> </option>
       <option class="option" value="kanto">Kanto</option>
       <option class="option" value="johto">Johto</option>
     </select>
 
-    <select id="type" class="typeMenu"> 
+    <select id="type" class="menu"> 
       <option class="option" value="all">Type</option>
       <option class="option" value="normal">Normal</option>
       <option class="option" value="fire">Fire</option>
@@ -47,7 +47,7 @@
       <option class="option" value="fairy">Fairy</option>
     </select>
 
-     <select id="weaknessPokemon" class="weaknessMenu" >
+     <select id="weaknessPokemon" class="menu" >
       <option class="option" value="all">Weaknesses</option>
       <option class="option" value="normal">Normal</option>
       <option class="option" value="fire">Fire</option>
@@ -69,16 +69,24 @@
       <option class="option" value="fairy">Fairy</option>
      </select>
 
-     <select id="pokemonRarity" class="rarityMenu" >
+     <select id="pokemonRarity" class="menu" >
       <option class="option" value="all">Pokemon-Rarity</option>
       <option class="option" value="normal">Normal</option>
       <option class="option" value="legendary">Legendary</option>
       <option class="option" value="mythic">Mythic</option>
      </select>
-     </section>
+   </section>
+
+<section class="sort" class="menu2">
+<select  id="sortMenu" >
+  <option value="all">Ordenar por: </option>
+  <option value="1"> A - Z </option>
+  <option value="-1"> Z - A </option>
+</select>
+</section>  
 
  
-   <section id="containerPokemon"></section>
+<section id="containerPokemon"></section>
   
     <script src="main.js" type="module"></script>
   </body>
