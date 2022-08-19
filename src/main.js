@@ -1,5 +1,5 @@
 import allData from "./data/pokemon/pokemon.js"
-import { filterType, filterGen, filterWeakness, filterRarity, filterOrder } from "./data.js"
+import { allFilters, filterOrder } from "./data.js"
 
 const mainData = allData.pokemon;
 let pokeData = allData.pokemon;
@@ -34,49 +34,78 @@ mainData.map(currentPokemon => {
 
 });
 
+//FILTROS
+
 let selectGen = document.getElementById("generation");
-//change hace que cada vez que cambia algo en el input, se activa
-// e = evento, target= se refiere al input, .value nos da el valor del input
+let selectType = document.getElementById("type");
+let selectWeakness = document.getElementById("weaknessPokemon");
+let selectRarity = document.getElementById("pokemonRarity");
+let selectOrder = document.getElementById("sortMenu");
+
+
+//FILTRO GENERACIÓN/REGIÓN 
+
 selectGen.addEventListener("change", (e) => {
   let selectedGeneration = e.target.value;
-  pokeData = filterGen(mainData, selectedGeneration);
+  let selectedType = selectType.value;
+  let selectedWeakness = selectWeakness.value;
+  let selectedRarity = selectRarity.value;
+
+  pokeData = allFilters(mainData,selectedGeneration, selectedType, selectedWeakness, selectedRarity);
   document.getElementById("containerPokemon").innerHTML = "";
   pokeData.forEach(currentPokemon => {
     pokemonCard(currentPokemon);
   });
 });
 
-let selectType = document.getElementById("type");
+//FILTRO TIPO DE POKEMON
+
 selectType.addEventListener("change", (e) => {
   let selectedType = e.target.value;
-  pokeData = filterType(mainData, selectedType);
+  let selectedGeneration = selectGen.value;
+  let selectedWeakness = selectWeakness.value;
+  let selectedRarity = selectRarity.value;
+
+  pokeData = allFilters(mainData,selectedGeneration, selectedType, selectedWeakness, selectedRarity);
   document.getElementById("containerPokemon").innerHTML = "";
   pokeData.forEach(currentPokemon => {
     pokemonCard(currentPokemon);
   });
 });
 
-let selectWeakness = document.getElementById("weaknessPokemon");
+//FILTRO DEBILIDAD
+
 selectWeakness.addEventListener("change", (e) => {
   let selectedWeakness = e.target.value;
-  pokeData = filterWeakness(mainData, selectedWeakness);
+  let selectedGeneration = selectGen.value;
+  let selectedType = selectType.value;
+  let selectedRarity = selectRarity.value;
+
+  pokeData = allFilters(mainData,selectedGeneration, selectedType, selectedWeakness, selectedRarity);
   document.getElementById("containerPokemon").innerHTML = "";
   pokeData.forEach(currentPokemon => {
     pokemonCard(currentPokemon)
   });
 });
 
-let selectRarity = document.getElementById("pokemonRarity");
+
+//FILTRO RAREZA
+
 selectRarity.addEventListener("change", (e) => {
   let selectedRarity = e.target.value;
-  pokeData = filterRarity(mainData, selectedRarity);
+  let selectedGeneration = selectGen.value;
+  let selectedType = selectType.value;
+  let selectedWeakness = selectWeakness.value;
+
+  pokeData = allFilters(mainData, selectedGeneration, selectedType, selectedWeakness, selectedRarity);
   document.getElementById("containerPokemon").innerHTML = "";
   pokeData.forEach(currentPokemon => {
     pokemonCard(currentPokemon)
   });
 });
 
-let selectOrder = document.getElementById("sortMenu");
+//ORDENAR DE A-Z Y Z-A
+
 selectOrder.addEventListener("change", (e) => {
   let sortOrder = e.target.value;
   pokeData = filterOrder(pokeData, sortOrder);
