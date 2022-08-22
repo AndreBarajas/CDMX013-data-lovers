@@ -150,3 +150,14 @@ h4{
 .option {
     font-family:  'Staatliches', cursive;
 }
+
+#sortMenu {
+    border-radius: 10px;
+    width: 80px;
+    height: 38px;
+    background-color: rgb(227, 236, 251);
+    backdrop-filter: blur(2px);
+    font-family: 'Staatliches', cursive;
+    font-size: medium;
+    align-items: center;
+} 

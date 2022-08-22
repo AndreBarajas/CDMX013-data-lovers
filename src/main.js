@@ -1,5 +1,5 @@
 import allData from "./data/pokemon/pokemon.js"
-import { filterType, filterGen, filterWeakness, filterRarity, filterOrder } from "./data.js"
+import { allFilters} from "./data.js"
 
 const mainData = allData.pokemon;
 let pokeData = allData.pokemon;
@@ -34,54 +34,28 @@ mainData.map(currentPokemon => {
 
 });
 
+//Nos traemos los filtros del DOM
 let selectGen = document.getElementById("generation");
-//change hace que cada vez que cambia algo en el input, se activa
-// e = evento, target= se refiere al input, .value nos da el valor del input
-selectGen.addEventListener("change", (e) => {
-  let selectedGeneration = e.target.value;
-  pokeData = filterGen(mainData, selectedGeneration);
-  document.getElementById("containerPokemon").innerHTML = "";
-  pokeData.forEach(currentPokemon => {
-    pokemonCard(currentPokemon);
-  });
-});
-
 let selectType = document.getElementById("type");
-selectType.addEventListener("change", (e) => {
-  let selectedType = e.target.value;
-  pokeData = filterType(mainData, selectedType);
+let selectWeakness = document.getElementById("weaknessPokemon");
+let selectRarity = document.getElementById("pokemonRarity");
+let selectOrder = document.getElementById("sortMenu");
+
+const onChange = () => {
+  pokeData = allFilters(mainData, selectGen.value, selectType.value, selectWeakness.value,selectRarity.value, selectOrder.value);
   document.getElementById("containerPokemon").innerHTML = "";
   pokeData.forEach(currentPokemon => {
     pokemonCard(currentPokemon);
   });
-});
+};
 
-let selectWeakness = document.getElementById("weaknessPokemon");
-selectWeakness.addEventListener("change", (e) => {
-  let selectedWeakness = e.target.value;
-  pokeData = filterWeakness(mainData, selectedWeakness);
-  document.getElementById("containerPokemon").innerHTML = "";
-  pokeData.forEach(currentPokemon => {
-    pokemonCard(currentPokemon)
-  });
-});
-
-let selectRarity = document.getElementById("pokemonRarity");
-selectRarity.addEventListener("change", (e) => {
-  let selectedRarity = e.target.value;
-  pokeData = filterRarity(mainData, selectedRarity);
-  document.getElementById("containerPokemon").innerHTML = "";
-  pokeData.forEach(currentPokemon => {
-    pokemonCard(currentPokemon)
-  });
-});
-
-let selectOrder = document.getElementById("sortMenu");
-selectOrder.addEventListener("change", (e) => {
-  let sortOrder = e.target.value;
-  pokeData = filterOrder(pokeData, sortOrder);
-  document.getElementById("containerPokemon").innerHTML = "";
-  pokeData.forEach(currentPokemon => {
-    pokemonCard(currentPokemon)
-  });
-});
+//Filtro por generación
+selectGen.addEventListener("change", onChange);
+//Filtro por tipo
+selectType.addEventListener("change", onChange);
+//Filtro por debilidad
+selectWeakness.addEventListener("change", onChange);
+//Filtro por rareza
+selectRarity.addEventListener("change", onChange);
+//Ordenar de A-Z y Z-A
+selectOrder.addEventListener("change", onChange);

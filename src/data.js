@@ -1,5 +1,14 @@
+export const allFilters = (mainData, selectGen, selectType, selectWeakness,selectRarity, sortOrder) => {
+  const filtrosPokemon = mainData.filter(mainData => selectGen === 'all'? true : mainData.generation.name == selectGen)
+  .filter(mainData=> selectType === 'all' ? true : mainData.type.includes (selectType))
+  .filter(mainData => selectWeakness === 'all' ? true : mainData.weaknesses.includes(selectWeakness))
+  .filter (mainData=> selectRarity === 'all' ? true : mainData["pokemon-rarity"] == (selectRarity))
+  .sort ((a,b) => sortOrder === 'all' ? true : sortOrder == 1 ? a.name > b.name || sortOrder == -1 : a.name < b.name)
+  console.log (filtrosPokemon);
+  return filtrosPokemon
+}
 
-export const filterGen = (mainData, selectedGeneration) => {
+/*export const filterGen = (mainData, selectedGeneration) => {
   const genPokemon = mainData.filter(mainData => {
     if (mainData.generation.name == (selectedGeneration)) {
       return true;
@@ -23,7 +32,6 @@ export const filterType = (mainData, selectedType) => {
   }
   else { return typePokemon; }
 };
-
 export const filterWeakness = (mainData, selectedWeakness) => {
   const weaknessPokemon = mainData.filter(mainData => {
     if (mainData.weaknesses.includes(selectedWeakness)) {
@@ -36,7 +44,6 @@ export const filterWeakness = (mainData, selectedWeakness) => {
   }
   else { return weaknessPokemon; }
 };
-
 export const filterRarity = (mainData, selectedRarity) => {
   const resultRarity = mainData.filter(mainData => {
     if (mainData["pokemon-rarity"] == (selectedRarity)) {
@@ -48,8 +55,8 @@ export const filterRarity = (mainData, selectedRarity) => {
     return mainData;
   }
   else { return resultRarity; }
-};
-
+}; */
+/*
 export const filterOrder = (mainData, sortOrder) => {
   const resultOrder = mainData.sort((a, b) => {
     if (sortOrder == 1) {
@@ -63,5 +70,4 @@ export const filterOrder = (mainData, sortOrder) => {
     }
   })
   return resultOrder;
-};
-
+}; */
