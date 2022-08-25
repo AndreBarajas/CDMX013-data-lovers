@@ -53,9 +53,27 @@ const onChange = () => {
 selectGen.addEventListener("change", onChange);
 //Filtro por tipo
 selectType.addEventListener("change", onChange);
-//Filtro por debilidad
+// //Filtro por debilidad
 selectWeakness.addEventListener("change", onChange);
 //Filtro por rareza
 selectRarity.addEventListener("change", onChange);
 //Ordenar de A-Z y Z-A
 selectOrder.addEventListener("change", onChange);
+
+let statsButton = document.getElementById("stats");
+let pokeButton = document.getElementById("data");
+
+// const showStats = () => {
+//   document.getElementById("containerPokemon").innerHTML = "";
+// }
+
+
+statsButton.addEventListener("click", () => {
+  document.getElementById("containerPokemon").innerHTML = "";
+});
+
+pokeButton.addEventListener("click", () => {
+  mainData.map(currentPokemon => {
+    pokemonCard(currentPokemon);
+  })  
+});
