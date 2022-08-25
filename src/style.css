@@ -24,7 +24,7 @@ header {
     align-items: start;
     width: 71%; 
     left: 150px;
-    top: 230px;
+    top: 200px;
     padding: 40px;
     position: absolute;
     background-image: url(./Imagenes/welcome.png);
@@ -34,8 +34,8 @@ header {
 
 .imagePikachu {
    position: absolute;
-   left: 800px;
-   top: 145px; 
+   left: 780px;
+   top: 114px; 
 }
 
 .pokeTitle {
@@ -54,7 +54,7 @@ header {
     justify-content: space-around;
     position: absolute;
     left: 150px;
-    top: 600px;
+    top: 650px;
     width: 80%;
 }
 
@@ -88,21 +88,22 @@ h4{
     margin-top: -10%;
 }
 
-.genlogo {
-    size: 200px;
-}
+ .logo {
+    width: 390px;
+    height: 70px;
+    margin-left: 70px;
+} 
 #generation {
     border-radius: 10px;
     width: 17%;
     height: 40px;
-    align-items: center;
     margin-left: 160px;
-    margin-top: 26%;
-    background-color: rgb(203, 232, 233);
+    margin-top: 290px;
+    background-color: rgb(218, 249, 255);
     backdrop-filter: blur(2px);
     font-family: 'Staatliches', cursive;
     font-size: medium;
-    align-items: center;
+    text-align-last: center;
 }
 
 #type {
@@ -111,12 +112,12 @@ h4{
     height: 40px;
     align-items: center;
     margin-left: 40px;
-    margin-top: 26%;
-    background-color: rgb(203, 232, 233);
+    margin-top: 290px;
+    background-color: rgb(218, 249, 255);
     backdrop-filter: blur(2px);
     font-family: 'Staatliches', cursive;
     font-size: medium;
-    align-items: center;
+    text-align: center;
 } 
 
 #weaknessPokemon {
@@ -125,12 +126,12 @@ h4{
     height: 40px;
     align-items: center;
     margin-left: 40px;
-    margin-top: 26%;
-    background-color: rgb(203, 232, 233);
+    margin-top: 290px;
+    background-color: rgb(218, 249, 255);
     backdrop-filter: blur(2px);
     font-family: 'Staatliches', cursive;
     font-size: medium;
-    align-items: center;
+    text-align-last: center;
 } 
 
 #pokemonRarity {
@@ -139,12 +140,12 @@ h4{
     height: 40px;
     align-items: center;
     margin-left: 40px;
-    margin-top: 26%;
-    background-color: rgb(203, 232, 233);
+    margin-top: 290px;
+    background-color: rgb(218, 249, 255);
     backdrop-filter: blur(2px);
     font-family: 'Staatliches', cursive;
     font-size: medium;
-    align-items: center;
+    text-align-last: center;
 } 
 
 .option {
@@ -153,11 +154,13 @@ h4{
 
 #sortMenu {
     border-radius: 10px;
-    width: 80px;
+    width: 300px;
     height: 38px;
-    background-color: rgb(227, 236, 251);
+    background-color: rgb(218, 249, 255);
     backdrop-filter: blur(2px);
     font-family: 'Staatliches', cursive;
     font-size: medium;
-    align-items: center;
+    text-align-last: center;
+    margin-left: 40%;
+    margin-top:25px;
 } 
