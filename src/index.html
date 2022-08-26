@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
   </head>
   
   <body>
@@ -93,8 +94,15 @@
   <option value="-1"> Z - A </option>
 </select>
 </section>
+
+<section id="stats-results"></section>
  
 <section id="containerPokemon"></section>
+
+<section id="charts">
+  <canvas id="chartType"></canvas>
+  <canvas id="chartRarity"></canvas>
+</section>
   
     <script src="main.js" type="module"></script>
   </body>

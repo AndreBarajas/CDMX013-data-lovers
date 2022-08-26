@@ -49,11 +49,19 @@ const onChange = () => {
   });
 };
 
+// const onChange2 = () => {
+//   pokeData = filterOrder(mainData,selectOrder.value);
+//   document.getElementById("containerPokemon").innerHTML = "";
+//   pokeData.forEach(currentPokemon => {
+//     pokemonCard(currentPokemon);
+//   });
+// };
+
 //Filtro por generación
 selectGen.addEventListener("change", onChange);
 //Filtro por tipo
 selectType.addEventListener("change", onChange);
-// //Filtro por debilidad
+//Filtro por debilidad
 selectWeakness.addEventListener("change", onChange);
 //Filtro por rareza
 selectRarity.addEventListener("change", onChange);
@@ -70,6 +78,37 @@ let pokeButton = document.getElementById("data");
 
 statsButton.addEventListener("click", () => {
   document.getElementById("containerPokemon").innerHTML = "";
+  
+  //Estadísticas
+//Gráfica por rareza
+const labels = ['Normal', 'Legendary', 'Mythic'];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: '# pokemon rarity',
+    data: [240, 9, 2],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+    ]
+  }]
+};
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }}
+  }
+};
+const myChart = new Chart(
+  document.getElementById('chartRarity'),
+  config
+);
+console.log(myChart); 
 });
 
 pokeButton.addEventListener("click", () => {
