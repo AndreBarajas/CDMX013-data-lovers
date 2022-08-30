@@ -1,5 +1,5 @@
 import allData from "./data/pokemon/pokemon.js"
-import { allFilters} from "./data.js"
+import { allFilters,compute, getDataColors} from "./data.js"
 
 const mainData = allData.pokemon;
 let pokeData = allData.pokemon;
@@ -49,14 +49,6 @@ const onChange = () => {
   });
 };
 
-// const onChange2 = () => {
-//   pokeData = filterOrder(mainData,selectOrder.value);
-//   document.getElementById("containerPokemon").innerHTML = "";
-//   pokeData.forEach(currentPokemon => {
-//     pokemonCard(currentPokemon);
-//   });
-// };
-
 //Filtro por generación
 selectGen.addEventListener("change", onChange);
 //Filtro por tipo
@@ -71,31 +63,47 @@ selectOrder.addEventListener("change", onChange);
 let statsButton = document.getElementById("stats");
 let pokeButton = document.getElementById("data");
 
-// const showStats = () => {
-//   document.getElementById("containerPokemon").innerHTML = "";
-// }
-
-
 statsButton.addEventListener("click", () => {
-  document.getElementById("containerPokemon").innerHTML = "";
+  const chartOfPokemon = document.getElementById("containerPokemon");
+  const chartOfType = document.getElementById("charts");
+  chartOfPokemon.style.display = "none";
+    chartOfType.style.display = "block";
   
-  //Estadísticas
-//Gráfica por rareza
-const labels = ['Normal', 'Legendary', 'Mythic'];
+//Estadísticas
+//Gráfica por tipo de pokemones
+
+  let typeList = new Set();
+  for (let i = 0; i < mainData.length; i++) {
+    let pokemonTypes = mainData[i].type;
+    //console.log("tiposdepokemones",pokemonTypes); 
+    for (let p = 0; p < pokemonTypes.length; p++) {
+      let type = pokemonTypes[p];
+      // con el add se añade al valor del objeto set
+      typeList.add(type);
+    }
+  } 
+      
+const labels = [...new Set(typeList)]
+console.log(labels);
+
+let porcentaje = labels.map(type => {
+  let calculo = compute(mainData,type)
+  return {'tipo': type, 'porcentaje': calculo}
+})
+console.log("porcentaje", porcentaje);
+
+
 const data = {
   labels: labels,
   datasets: [{
-    label: '# pokemon rarity',
-    data: [240, 9, 2],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-    ]
+    label: '# pokemon type',
+    data: porcentaje.map(p => p.porcentaje),
+    borderColor: getDataColors(),
+    backgroundColor: getDataColors(30),
   }]
 };
 const config = {
-  type: 'line',
+  type: 'doughnut',
   data: data,
   options: {
     scales: {
@@ -105,14 +113,20 @@ const config = {
   }
 };
 const myChart = new Chart(
-  document.getElementById('chartRarity'),
+  document.getElementById('chartType'),
   config
 );
-console.log(myChart); 
 });
 
 pokeButton.addEventListener("click", () => {
-  mainData.map(currentPokemon => {
-    pokemonCard(currentPokemon);
+  let pokeButton = document.getElementById("data");
+  pokeButton.addEventListener("click", () => {
+    const chartOfPokemon = document.getElementById("containerPokemon");
+    const chartOfType = document.getElementById("chartType");
+    chartOfType.style.display = "none";
+    chartOfPokemon.style.display = "grid"
+    mainData.map(currentPokemon => {
+      pokemonCard(currentPokemon);
+    })
   })  
 });

@@ -180,3 +180,6 @@ h4{
     margin-top: 5%;
     vertical-align: top;
 }
+#charts{
+    display: none;
+}
