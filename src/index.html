@@ -4,12 +4,21 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
   </head>
+  
   <body>
     <div id="root"></div>
     <header>
       <img src="./Imagenes/Logo.png" class="logo">
     </header>
+
+
+    <section class="buttons">
+      <img src="./Imagenes/icons/icons8-pokedex-48.png" id="data">
+      <img src="./Imagenes/icons/icons8-estrella-pokemon-48.png" id="stats"> 
+    </section>
+
 
     <section class="welcome">
     <div class="pokeTitle">GOTTA CATCH 'EM ALL</div>
@@ -79,13 +88,19 @@
 
 <section class="sortMenu">
 <select id="sortMenu" class="menu">
-  <option value="all">SORT BY: </option>
-  <option value="1"> A - Z </option>
-  <option value="-1"> Z - A </option>
+  <option value="all">Sort By: </option>
+  <option value="A-Z"> A - Z </option>
+  <option value="Z-A"> Z - A </option>
 </select>
 </section>
+
+<section id="stats-results"></section>
  
 <section id="containerPokemon"></section>
+
+<section id="charts">
+  <canvas id="chartType"></canvas>
+</section>
   
     <script src="main.js" type="module"></script>
   </body>

@@ -1,5 +1,5 @@
 import allData from "./data/pokemon/pokemon.js"
-import { allFilters} from "./data.js"
+import { allFilters,compute, getDataColors} from "./data.js"
 
 const mainData = allData.pokemon;
 let pokeData = allData.pokemon;
@@ -59,3 +59,74 @@ selectWeakness.addEventListener("change", onChange);
 selectRarity.addEventListener("change", onChange);
 //Ordenar de A-Z y Z-A
 selectOrder.addEventListener("change", onChange);
+
+let statsButton = document.getElementById("stats");
+let pokeButton = document.getElementById("data");
+
+statsButton.addEventListener("click", () => {
+  const chartOfPokemon = document.getElementById("containerPokemon");
+  const chartOfType = document.getElementById("charts");
+  chartOfPokemon.style.display = "none";
+    chartOfType.style.display = "block";
+  
+//Estadísticas
+//Gráfica por tipo de pokemones
+
+  let typeList = new Set();
+  for (let i = 0; i < mainData.length; i++) {
+    let pokemonTypes = mainData[i].type;
+    //console.log("tiposdepokemones",pokemonTypes); 
+    for (let p = 0; p < pokemonTypes.length; p++) {
+      let type = pokemonTypes[p];
+      // con el add se añade al valor del objeto set
+      typeList.add(type);
+    }
+  } 
+      
+const labels = [...new Set(typeList)]
+console.log(labels);
+
+let porcentaje = labels.map(type => {
+  let calculo = compute(mainData,type)
+  return {'tipo': type, 'porcentaje': calculo}
+})
+console.log("porcentaje", porcentaje);
+
+
+const data = {
+  labels: labels,
+  datasets: [{
+    label: '# pokemon type',
+    data: porcentaje.map(p => p.porcentaje),
+    borderColor: getDataColors(),
+    backgroundColor: getDataColors(30),
+  }]
+};
+const config = {
+  type: 'doughnut',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }}
+  }
+};
+const myChart = new Chart(
+  document.getElementById('chartType'),
+  config
+);
+});
+
+pokeButton.addEventListener("click", () => {
+  let pokeButton = document.getElementById("data");
+  pokeButton.addEventListener("click", () => {
+    const chartOfPokemon = document.getElementById("containerPokemon");
+    const chartOfType = document.getElementById("chartType");
+    chartOfType.style.display = "none";
+    chartOfPokemon.style.display = "grid"
+    mainData.map(currentPokemon => {
+      pokemonCard(currentPokemon);
+    })
+  })  
+});
