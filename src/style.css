@@ -70,12 +70,6 @@ div.pokeDiv  {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.pokeImg {
-    width: 120px;
-    height: 120px;
-    margin-top: 15px;
-}
-
 h3{
     font-family: 'Staatliches', cursive;
     font-size: 25px;
@@ -148,10 +142,6 @@ h4{
     text-align-last: center;
 } 
 
-.option {
-    font-family:  'Staatliches', cursive;
-}
-
 #sortMenu {
     border-radius: 10px;
     width: 300px;
@@ -180,6 +170,10 @@ h4{
     margin-top: 5%;
     vertical-align: top;
 }
-#charts{
-    display: none;
+
+#title{
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+    color: rgb(202, 196, 196);
+    margin-left: 45%;
 }
