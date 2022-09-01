@@ -1,4 +1,4 @@
-import { TestEnvironment } from 'jest-environment-jsdom';
+
 import { allFilters, compute} from '../src/data.js';
 
 describe('allFilters', () => {
